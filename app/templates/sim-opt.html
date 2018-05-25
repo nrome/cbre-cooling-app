@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="col-sm-9">
+
+        <!-- column 2 -->
+        <strong><i class="glyphicon glyphicon-equalizer"></i> &nbsp;What If Analysis</strong>
+
+        <hr>
+
+        <div class="row">
+
+            <form role="form" data-toggle="validator">
+
+                <div class='col-sm-4'>
+                    <div class="form-group">
+                        <select class="form-control" id="so-unit" required="select a CRAH Unit">
+                            <option selected="true" disabled="disabled">Select CRAH Unit</option>
+                            <option value="DH4">CRAH - DH4</option>
+                            <option value="DH5">CRAH - DH5</option>
+                            <option value="DH7">CRAH - DH7</option>
+                            <option value="DH9">CRAH - DH9</option>
+                            <option value="DH10">CRAH - DH10</option>
+                            <option value="DH11">CRAH - DH11</option>
+                            <option value="DH14">CRAH - DH14</option>
+                            <option value="DH18">CRAH - DH18</option>
+                            <option value="DH20">CRAH - DH20</option>
+                            <option value="DH21">CRAH - DH21</option>
+                            <option value="DH23">CRAH - DH23</option>
+                            <option value="DH24">CRAH - DH24</option>
+                            <option value="DH26">CRAH - DH26</option>
+                        </select>
+                        <small class="text-muted">Choose CRAH Unit</small>
+                    </div>
+                </div>
+
+                <div class='col-sm-4'>
+                    <div class="form-group">
+                        <select class="form-control" id="so-degree" required="please choose temperature">
+                            <option selected="true" disabled="disabled">Select Supply Air Temperature</option>
+                            <option value="0.5"> 0.5&deg; </option>
+                            <option value="1"> 1&deg; </option>
+                            <option value="1.5"> 1.5&deg; </option>
+                            <option value="2"> 2&deg; </option>
+                            <option value="2.5"> 2.5&deg; </option>
+                            <option value="3"> 3&deg; </option>
+                            <option value="3.5"> 3.5&deg; </option>
+                            <option value="4"> 4&deg; </option>
+                            <option value="4.5"> 4.5&deg; </option>
+                            <option value="5"> 5&deg; </option>
+                        </select>
+                        <small class="text-muted">Increase Temperature By</small>
+                    </div>
+                </div>
+
+                <div class='col-sm-2'>
+                    <button class="btn btn-primary btn-block" onclick="so_storeData()" type="button">
+                        <span class="glyphicon glyphicon-transfer"></span> RUN PLOTS
+                    </button>
+                </div>
+                <div class='col-sm-2'>
+                    <button class="btn btn-default btn-block" onclick="so_reset()" type="button">
+                        <span class="glyphicon glyphicon-refresh"></span> RESET
+                    </button>
+                </div>
+            </form>
+
+        </div>
+        <!--/row-->
+
+        <hr>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="med-frame">
+                    <!--<i id="spinner" class="fa fa-circle-o-notch fa-spin"></i>-->
+                    <iframe id="sim-opt" src="http://cbre-cooling-optimization.mybluemix.net/inlet_prediction/DH4_1" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--/col-span-9-->
+
+    <div class="col-xs-12 spacer"></div>
+
+{% endblock %}

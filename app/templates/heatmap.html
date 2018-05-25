@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="col-sm-9">
+
+        <!-- column 2 -->
+        <strong><i class="glyphicon glyphicon-equalizer"></i> &nbsp;Data Center Heatmap</strong>
+
+        <hr>
+
+        <div class="row">
+
+            <form role="form" data-toggle="validator">
+
+                <div class='col-sm-4'>
+                    <div style="padding-top: 8px;">
+                        <span class="label label-danger">Above 27&deg;C</span>&nbsp;
+                        <span class="label label-primary">Below 22&deg;C</span>&nbsp;
+                        <span class="label label-success">Between 22&deg;C - 27&deg;C</span>
+                    </div>
+                </div>
+
+                <div class='col-sm-4'>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="heatmap-date" placeholder="YYYYMMDD"
+                        required="input must adhere to the date convention">
+                        <small class="text-muted">Snapshot date format YYYYMMDD</small>
+                    </div>
+                </div>
+
+                <div class='col-sm-2'>
+                    <button class="btn btn-primary btn-block" onclick="hm_storeDate()" type="button">
+                        <span class="glyphicon glyphicon-transfer"></span> RUN SNAPSHOT
+                    </button>
+                </div>
+                <div class='col-sm-2'>
+                    <button class="btn btn-default btn-block" onclick="hm_reset()" type="button">
+                        <span class="glyphicon glyphicon-refresh"></span> RESET 
+                    </button>
+                </div>
+            </form>
+
+            <div class="wrap">
+                <iframe id="heatmap" class="frame" src="http://cbre-cooling-optimization.mybluemix.net/heatmap/20170405/"></iframe>
+            </div>
+            <div id="overlay" >
+                <img src="/static/images/bayview.png" alt="bayview-layout" width="996" height="400">
+            </div>
+        </div>
+        <!--/row-->
+
+    </div>
+    <!--/col-span-9-->
+
+{% endblock %}

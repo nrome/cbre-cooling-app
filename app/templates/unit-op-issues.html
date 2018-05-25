@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="col-sm-9">
+
+        <!-- column 2 -->
+        <strong><i class="glyphicon glyphicon-equalizer"></i> &nbsp;Cooling Unit Optimization Issues</strong>
+
+        <hr>
+
+        <div class="row">
+
+            <form role="form" data-toggle="validator">
+
+                <div class='col-sm-2'>
+                    <div class="form-group">
+                        <select class="form-control" id="uoi-unit" required="select a CRAH Unit">
+                            <option selected="true" disabled="disabled">Select Unit</option>
+                            <option value="DH1">CRAH - DH1</option>
+                            <option value="DH2">CRAH - DH2</option>
+                            <option value="DH4">CRAH - DH4</option>
+                            <option value="DH5">CRAH - DH5</option>
+                            <option value="DH9">CRAH - DH9</option>
+                            <option value="DH10">CRAH - DH10</option>
+                            <option value="DH11">CRAH - DH11</option>
+                            <option value="DH14">CRAH - DH14</option>
+                            <option value="DH15">CRAH - DH15</option>
+                            <option value="DH17">CRAH - DH17</option>
+                            <option value="DH18">CRAH - DH18</option>
+                            <option value="DH21">CRAH - DH21</option>
+                            <option value="DH23">CRAH - DH23</option>
+                            <option value="DH24">CRAH - DH24</option>
+                            <option value="DH26">CRAH - DH26</option>
+                        </select>
+                        <small class="text-muted">Choose a CRAH Unit</small>
+                    </div>
+                </div>
+
+                <div class='col-sm-3'>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="uoi-date-from" placeholder="YYYYMMDD"
+                        required="input a date">
+                        <small class="text-muted">Start date format YYYYMMDD</small>
+                    </div>
+                </div>
+
+                <div class='col-sm-3'>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="uoi-date-to" placeholder="YYYYMMDD"
+                        required="input must adhere to the date convention">
+                        <small class="text-muted">End date format YYYYMMDD</small>
+                    </div>
+                </div>
+
+                <div class='col-sm-2'>
+                    <button class="btn btn-primary btn-block" onclick="uoi_storeData()" type="button">
+                        <span class="glyphicon glyphicon-transfer"></span> RUN PLOT
+                    </button>
+                </div>
+                <div class='col-sm-2'>
+                    <button class="btn btn-default btn-block" onclick="uoi_reset()" type="button">
+                        <span class="glyphicon glyphicon-refresh"></span> RESET
+                    </button>
+                </div>
+            </form>
+
+        </div>
+        <!--/row-->
+
+        <hr>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="small-frame">
+                    <iframe id="met-sat" src="http://cbre-cooling-optimization.mybluemix.net/ops_issues/DH1-SAT_20170901_20171030" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="small-frame">
+                    <iframe id="met-rat" src="http://cbre-cooling-optimization.mybluemix.net/ops_issues/DH1-RAT_20170901_20171030" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="small-frame">
+                    <iframe id="met-clv" src="http://cbre-cooling-optimization.mybluemix.net/ops_issues/DH1-CLV_20170901_20171030" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="small-frame">
+                    <iframe id="met-fanspd" src="http://cbre-cooling-optimization.mybluemix.net/ops_issues/DH1-FANSPD_20170901_20171030" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div> 
+
+    </div>
+    <!--/col-span-9-->
+
+{% endblock %}

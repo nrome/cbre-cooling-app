@@ -1,0 +1,27 @@
+{% extends "login-layout.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <form class="form-signin" action="" method="POST">
+        <h2 class="form-signin-heading">Please sign in</h2>
+
+        <label for="username" class="sr-only">Username</label>
+            <input type="username" class="form-control" name="username" placeholder="Username" value="{{
+                request.form.username }}">
+
+        <label for="password" class="sr-only">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password" value="{{
+                request.form.password }}">
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit" value="login">Sign in</button>
+        {% if error %}
+            <p class="error"><strong>Error:</strong> {{ error }}
+        {% endif %}
+    </form>
+
+</div> 
+<!-- /container -->
+
+{% endblock %}

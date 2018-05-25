@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+            <div class="col-sm-9">
+
+                <!-- column 2 -->
+                <strong><i class="glyphicon glyphicon-stats"></i> &nbsp;Plot View</strong>
+
+                <hr>
+
+                <div class="row">
+
+
+                    <!-- 16:9 aspect ratio -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="http://via.placeholder.com/996x400" allowfullscreen></iframe>
+                        <img id="bay-bg" class="img-responsive" src="/static/images/bayview.png" alt="bayview-layout" width="996" height="400" style="opacity: 0.7; z-index:999;">
+                    </div>
+
+
+                    <!--
+                    <iframe src="https://viz-engine.mybluemix.net/api/v1/heatmap_test/" allowtransparency="true" height="80%" width="80%" frameborder="0" style="background-image:url(../static/images/bayview.png)">
+                        alternative content for browsers which do not support iframe.
+                    </iframe>
+                    <iframe src="https://viz-engine.mybluemix.net/api/v1/dashboard_test/" height="500px" width="810px" frameborder="0">
+                        alternative content for browsers which do not support iframe.
+                    </iframe>
+                    -->
+                </div>
+                <!--/row-->
+
+            </div>
+            <!--/col-span-9-->
+
+{% endblock %}

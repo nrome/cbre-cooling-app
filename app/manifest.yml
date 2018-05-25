@@ -1,0 +1,5 @@
+---
+applications:
+ - name: cbre_cooling_optimization
+   memory: 2048M
+   instances: 1

@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="col-sm-9">
+
+        <!-- column 2 -->
+        <strong><i class="glyphicon glyphicon-equalizer"></i> &nbsp;Cooling Unit Optimization</strong>
+
+        <hr>
+
+        <div class="row">
+
+            <form role="form" data-toggle="validator">
+
+                <div class='col-sm-4'>
+                    <div class="form-group">
+                        <select class="form-control" id="spo-percentage" required="please choose fan speed">
+                            <option selected="true" disabled="disabled">Select Fan Speed</option>
+                            <option value="0.5"> 50% </option>
+                            <option value="0.4"> 40% </option>
+                            <option value="0.3"> 30% </option>
+                            <option value="0.2"> 20% </option>
+                            <option value="0.1"> 10% </option>
+                        </select>
+                        <small class="text-muted">Fan Speed</small>
+                    </div>
+                </div>
+
+                <div class='col-sm-4'>
+                    <div class="form-group">
+                        <select class="form-control" id="spo-degree" required="please choose temperature">
+                            <option selected="true" disabled="disabled">Select Supply Air Temperature</option>
+                            <option value="0.5"> 0.5&deg; </option>
+                            <option value="1"> 1&deg; </option>
+                            <option value="1.5"> 1.5&deg; </option>
+                            <option value="2"> 2&deg; </option>
+                            <option value="2.5"> 2.5&deg; </option>
+                            <option value="3"> 3&deg; </option>
+                            <option value="3.5"> 3.5&deg; </option>
+                            <option value="4"> 4&deg; </option>
+                            <option value="4.5"> 4.5&deg; </option>
+                            <option value="5"> 5&deg; </option>
+                        </select>
+                        <small class="text-muted">Increase Temperature By</small>
+                    </div>
+                </div>
+
+                <div class='col-sm-2'>
+                    <button class="btn btn-primary btn-block" onclick="spo_storeData()" type="button">
+                        <span class="glyphicon glyphicon-transfer"></span> RUN PLOT
+                    </button>
+                </div>
+                <div class='col-sm-2'>
+                    <button class="btn btn-default btn-block" onclick="spo_reset()" type="button">
+                        <span class="glyphicon glyphicon-refresh"></span> RESET
+                    </button>
+                </div>
+            </form>
+
+        </div>
+        <!--/row-->
+
+        <hr>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="med-wide-frame">
+                    <!--<i id="spinner" class="fa fa-circle-o-notch fa-spin"></i>-->
+                    <iframe id="setpoint-opt" src="http://cbre-cooling-optimization.mybluemix.net/full_opt_dashboard/999_999" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--/col-span-9-->
+
+    <div class="col-xs-12 spacer"></div>
+
+{% endblock %}

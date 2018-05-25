@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="col-sm-9">
+
+        <!-- column 2 -->
+        <strong><i class="glyphicon glyphicon-equalizer"></i> &nbsp;Cooling Unit Health</strong>
+
+        <hr>
+
+        <div class="row">
+
+            <form role="form" data-toggle="validator">
+
+                <div class='col-sm-4'>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="db-date-from" placeholder="YYYYMMDD"
+                        required="input must adhere to the date convention">
+                        <small class="text-muted">Start date format YYYYMMDD</small>
+                    </div>
+                </div>
+
+                <div class='col-sm-4'>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="db-date-to" placeholder="YYYYMMDD"
+                        required="input must adhere to the date convention">
+                        <small class="text-muted">End date format YYYYMMDD</small>
+                    </div>
+                </div>
+
+                <div class='col-sm-2'>
+                    <button class="btn btn-primary btn-block" onclick="db_storeDates()" type="button">
+                        <span class="glyphicon glyphicon-transfer"></span> GET DATA
+                    </button>
+                </div>
+                <div class='col-sm-2'>
+                    <button class="btn btn-default btn-block" onclick="db_reset()" type="button">
+                        <span class="glyphicon glyphicon-refresh"></span> RESET
+                    </button>
+                </div>
+            </form>
+
+        </div>
+        <!--/row-->
+
+        <div class="row">
+            <div class="col-sm-12" style="text-align: center;">
+                <div style="padding-top: 8px;">
+                    <span class="label label-danger">High Zone Temp</span>&nbsp;
+                    <span class="label label-primary">Low Zone Temp</span>&nbsp;
+                    <span class="label label-success">Excess Load Discharge</span>
+                    <span class="label label-warning" style="background-color: #fa823b;">Pressure Not Attained</span>
+                    <span class="label label-default" style="background-color: #d8dc00;">Low Zone Temp</span>
+                    <span class="label label-default" style="background-color: #9a6a00;">Cooling Not Attained</span>
+                    <span class="label label-default" style="background-color: #fd99e3;">Outside Air Temperature</span>
+                </div>
+            </div>            
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="med-frame">
+                    <!--<i id="spinner" class="fa fa-circle-o-notch fa-spin"></i>-->
+                    <iframe id="dashboard" src="http://cbre-cooling-optimization.mybluemix.net/dashboard/20171021_20171031/" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--/col-span-9-->
+
+    <div class="col-xs-12 spacer"></div>
+
+{% endblock %}

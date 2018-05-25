@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+            <div class="col-sm-9">
+
+                <!-- column 2 -->
+                <strong><i class="glyphicon glyphicon-equalizer"></i> &nbsp;Outside Air Temperature View</strong>
+
+                <hr>
+
+                <div class="row">
+                        
+                    <!-- 16:9 aspect ratio -->
+                    <div class="embed-responsive embed-responsive-4by3">
+                        <iframe class="embed-responsive-item" src="http://viz-engine.mybluemix.net/api/v1/oat_test/" allowfullscreen></iframe>
+                    </div>
+
+                </div>
+                <!--/row-->
+
+            </div>
+            <!--/col-span-9-->
+
+{% endblock %}

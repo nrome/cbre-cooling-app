@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>CBRE Data Center Cooling Unit Optimization</title>
+		<meta name="generator" content="Bootply" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="{{ url_for('static', filename='css/styles.css')}}" rel="stylesheet">
+
+        <!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        
+	</head>
+	<body>
+        <!-- header -->
+        <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <img id="watson-logo" src="../static/images/ibm-watson.png" height="35px" alt="IBM">
+                    <a id="brand-link" href="#">CBRE Data Center Cooling Unit Optimization</a>
+                </div>
+
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> &nbsp;Admin Authenticated &nbsp;<span class="caret"></span></a>
+                            <ul id="g-account-menu" class="dropdown-menu" role="menu">
+                                <li><a href="#">My Profile</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{{ url_for('login') }}"><i class="glyphicon glyphicon-off"></i> &nbsp;Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /container -->
+
+        </div>
+        <!-- /Header -->
+
+        <!-- Main -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3">
+                    <!-- Left column -->
+                    <strong><i class="glyphicon glyphicon-dashboard"></i> &nbsp;Dashboard Navigation</strong>
+    
+                    <hr>
+    
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="nav-header"></li>
+                        <li><a href="{{ url_for('heatmap') }}"><i class="glyphicon glyphicon-equalizer"></i> &nbsp;Data Center Heatmap</a></li>
+                        <li><a href="{{ url_for('setpointOpt') }}"><i class="glyphicon glyphicon-equalizer"></i> &nbsp;Cooling Unit Optimization</a></li>
+                        <li><a href="{{ url_for('datacenter') }}"><i class="glyphicon glyphicon-equalizer"></i> &nbsp;Ambient Temp Plenum Pressure</a></li>
+                        <li><a href="{{ url_for('dashboard') }}"><i class="glyphicon glyphicon-equalizer"></i> &nbsp;Cooling Unit Health</a></li>
+                        <li><a href="{{ url_for('unitOpIssues') }}"><i class="glyphicon glyphicon-equalizer"></i> &nbsp;Cooling Unit Operational Issues</a></li>
+                        <li><a href="{{ url_for('simOpt') }}"><i class="glyphicon glyphicon-equalizer"></i> &nbsp;What If Analysis</a></li>
+                    </ul>
+    
+                </div>
+                <!-- /col-3 -->
+                
+                {% block content %}
+
+                {% endblock %}
+
+            </div>
+        </div>
+        <!-- /Main -->
+
+        <footer class="text-center"><img src="../static/images/ibm_logo_black.png" height="35px" alt="IBM"></footer>
+    </body>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+
+</html>

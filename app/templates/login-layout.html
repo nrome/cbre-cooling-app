@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>CBRE Data Center Cooling Unit Optimization</title>
+		<meta name="generator" content="Bootply" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="{{ url_for('static', filename='css/styles.css')}}" rel="stylesheet">
+	</head>
+	<body>
+        <!-- header -->
+        <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <img id="watson-logo" src="../static/images/ibm-watson.png" height="35px" alt="IBM">
+                    <a id="brand-link" href="#">CBRE Data Center Cooling Unit Optimization</a>
+                </div>
+                
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /Header -->
+
+        {% block content %}
+
+        {% endblock %}
+
+        <footer class="text-center"><img src="../static/images/ibm_logo_black.png" height="35px" alt="IBM"></footer>
+    </body>
+    <!-- script references -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/scripts.js"></script>
+</html>
